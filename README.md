@@ -127,22 +127,22 @@ while (true)
 
 | 版本 | 文件 | 工具 | 核心新增 | 关键洞察 |
 |------|------|------|---------|---------|
-| v0 | [v0_bash_agent.cs](./dotnet/v0_bash_agent.cs) | bash | 递归子代理 | 一个工具就够了 |
-| v1 | [v1_basic_agent.cs](./dotnet/v1_basic_agent.cs) | bash, read, write, edit | 核心循环 | 模型即代理 |
-| v2 | [v2_todo_agent.cs](./dotnet/v2_todo_agent.cs) | +TodoWrite | 显式规划 | 约束赋能复杂性 |
-| v3 | [v3_subagent.cs](./dotnet/v3_subagent.cs) | +Task | 上下文隔离 | 干净上下文 = 更好结果 |
-| v4 | [v4_skills_agent.cs](./dotnet/v4_skills_agent.cs) | +Skill | 知识加载 | 专业无需重训 |
+| v0 | [v0_bash_agent.cs](v0_bash_agent.cs) | bash | 递归子代理 | 一个工具就够了 |
+| v1 | [v1_basic_agent.cs](v1_basic_agent.cs) | bash, read, write, edit | 核心循环 | 模型即代理 |
+| v2 | [v2_todo_agent.cs](v2_todo_agent.cs) | +TodoWrite | 显式规划 | 约束赋能复杂性 |
+| v3 | [v3_subagent.cs](v3_subagent.cs) | +Task | 上下文隔离 | 干净上下文 = 更好结果 |
+| v4 | [v4_skills_agent.cs](v4_skills_agent.cs) | +Skill | 知识加载 | 专业无需重训 |
 
 ## 深入阅读 (文章)
 
 该系列配套了详细的公众号风格文章，深入剖析设计理念：
 
-- [v0: Bash 就是一切](./dotnet/articles/v0文章.md)
-- [v1: 模型即代理 - 价值 3000 万美金的 400 行代码](./dotnet/articles/v1文章.md)
-- [v2: 用 Todo 实现自我约束](./dotnet/articles/v2文章.md)
-- [v3: 子代理机制 - 上下文隔离的艺术](./dotnet/articles/v3文章.md)
-- [v4: Skills 机制 - 知识外部化](./dotnet/articles/v4文章.md)
-- [上下文缓存经济学](./dotnet/articles/上下文缓存经济学.md)
+- [v0: Bash 就是一切](articles/v0文章.md)
+- [v1: 模型即代理 - 价值 3000 万美金的 400 行代码](articles/v1文章.md)
+- [v2: 用 Todo 实现自我约束](articles/v2文章.md)
+- [v3: 子代理机制 - 上下文隔离的艺术](articles/v3文章.md)
+- [v4: Skills 机制 - 知识外部化](articles/v4文章.md)
+- [上下文缓存经济学](articles/上下文缓存经济学.md)
 
 ## 设计哲学
 
