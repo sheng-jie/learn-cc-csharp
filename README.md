@@ -64,7 +64,7 @@
 
 ### 前置要求
 
-- [.NET SDK](https://dotnet.microsoft.com/download) (推荐 .NET 8.0 或更高)
+- [.NET SDK](https://dotnet.microsoft.com/download) (推荐 .NET 10.0 )
 - 一个 Anthropic API Key (或兼容的 API 代理)
 
 ### 运行步骤
