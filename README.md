@@ -51,6 +51,15 @@
     v
 [v4: Skills Agent] ---> "按需领域专业"
                          +Skill 工具
+    v
+[v5-v11: 新增课时] --> "长会话与多智能体协作"
+                         v5 上下文压缩
+                         v6 任务系统
+                         v7 后台任务
+                         v8 智能体团队
+                         v9 团队协议
+                         v10 自治智能体
+                         v11 Worktree + 任务隔离
 ```
 
 **推荐学习方式：**
@@ -59,6 +68,7 @@
 3. 学习 `v2` 的规划模式
 4. 探索 `v3` 的复杂任务分解
 5. 掌握 `v4` 构建可扩展的 Agent
+6. 继续学习 `v5-v11` 的长会话、持久化与多智能体机制
 
 ## 快速开始
 
@@ -102,6 +112,15 @@
 
    # + Skills
    dotnet run v4_skills_agent.cs
+
+   # 新增 7 个课时（同步自上游 s06-s12）
+   dotnet run v5_context_compact.cs
+   dotnet run v6_task_system_agent.cs
+   dotnet run v7_background_tasks_agent.cs
+   dotnet run v8_agent_teams.cs
+   dotnet run v9_team_protocols.cs
+   dotnet run v10_autonomous_agents.cs
+   dotnet run v11_worktree_task_isolation.cs
    ```
 
 ## 核心模式
@@ -132,6 +151,13 @@ while (true)
 | v2 | [v2_todo_agent.cs](v2_todo_agent.cs) | +TodoWrite | 显式规划 | 约束赋能复杂性 |
 | v3 | [v3_subagent.cs](v3_subagent.cs) | +Task | 上下文隔离 | 干净上下文 = 更好结果 |
 | v4 | [v4_skills_agent.cs](v4_skills_agent.cs) | +Skill | 知识加载 | 专业无需重训 |
+| v5 | [v5_context_compact.cs](v5_context_compact.cs) | compact | 上下文压缩 | 策略性遗忘 |
+| v6 | [v6_task_system_agent.cs](v6_task_system_agent.cs) | tasks | 任务持久化 | 状态跨压缩存活 |
+| v7 | [v7_background_tasks_agent.cs](v7_background_tasks_agent.cs) | background | 后台执行 | 发射后不管 |
+| v8 | [v8_agent_teams.cs](v8_agent_teams.cs) | mailbox | 团队协作 | 追加即发送，排空即读取 |
+| v9 | [v9_team_protocols.cs](v9_team_protocols.cs) | protocol | 协议化协作 | 同 request_id 双协议 |
+| v10 | [v10_autonomous_agents.cs](v10_autonomous_agents.cs) | autonomous | 自组织执行 | 轮询、认领、工作、重复 |
+| v11 | [v11_worktree_task_isolation.cs](v11_worktree_task_isolation.cs) | worktree | 目录隔离 | 任务 ID 协调并行 |
 
 ## 深入阅读 (文章)
 
@@ -142,6 +168,13 @@ while (true)
 - [v2: 用 Todo 实现自我约束](articles/v2文章.md)
 - [v3: 子代理机制 - 上下文隔离的艺术](articles/v3文章.md)
 - [v4: Skills 机制 - 知识外部化](articles/v4文章.md)
+- [v5: 上下文压缩（Compact）](articles/v5文章.md)
+- [v6: 任务系统（Task System）](articles/v6文章.md)
+- [v7: 后台任务（Background Tasks）](articles/v7文章.md)
+- [v8: 智能体团队（Agent Teams）](articles/v8文章.md)
+- [v9: 团队协议（Team Protocols）](articles/v9文章.md)
+- [v10: 自治智能体（Autonomous Agents）](articles/v10文章.md)
+- [v11: Worktree + 任务隔离](articles/v11文章.md)
 - [上下文缓存经济学](articles/上下文缓存经济学.md)
 
 ## 设计哲学
