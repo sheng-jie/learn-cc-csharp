@@ -30,6 +30,13 @@
 - **显式规划** - 使用约束让 AI 行为可预测
 - **上下文管理** - 通过子代理（进程隔离）保持代理记忆干净
 - **知识注入** - 按需加载领域专业知识，无需重新训练
+- **上下文压缩** - 三层管道让智能体无限期工作
+- **任务系统** - 文件系统上的持久化任务看板与依赖图
+- **后台执行** - 非阻塞命令执行与通知排空
+- **智能体团队** - 持久化队友与 JSONL 收件箱通信
+- **团队协议** - request_id 握手驱动的关机与审批 FSM
+- **自治智能体** - WORK/IDLE 生命周期与任务看板自动认领
+- **Worktree 隔离** - 控制面/执行面分离的并行开发
 
 ## 学习路径
 
@@ -50,7 +57,28 @@
     |                    +Task 工具 (进程隔离)
     v
 [v4: Skills Agent] ---> "按需领域专业"
-                         +Skill 工具
+    |                    +Skill 工具
+    v
+[v5: Compact] --------> "三层上下文压缩"
+    |                    +Compact 工具
+    v
+[v6: Task System] ----> "持久化任务看板"
+    |                    +Task CRUD 工具
+    v
+[v7: Background] -----> "后台不阻塞"
+    |                    +Background 工具
+    v
+[v8: Agent Teams] ----> "从独狼到团队"
+    |                    +MessageBus + Teammate
+    v
+[v9: Protocols] ------> "结构化协议"
+    |                    +Shutdown/Plan FSM
+    v
+[v10: Autonomous] ----> "自治生命周期"
+    |                    +WORK/IDLE + ClaimTask
+    v
+[v11: Worktree] ------> "目录隔离"
+                         +Git Worktree + EventBus
 ```
 
 **推荐学习方式：**
@@ -59,6 +87,9 @@
 3. 学习 `v2` 的规划模式
 4. 探索 `v3` 的复杂任务分解
 5. 掌握 `v4` 构建可扩展的 Agent
+6. 理解 `v5` 的上下文压缩——真正能"无限"工作的关键
+7. 对比 `v6`/`v7` 的持久化状态与后台执行
+8. 从 `v8` 到 `v11` 逐步构建多智能体系统
 
 ## 快速开始
 
@@ -102,6 +133,27 @@
 
    # + Skills
    dotnet run v4_skills_agent.cs
+
+   # + 上下文压缩
+   dotnet run v5_context_compact.cs
+
+   # + 任务系统
+   dotnet run v6_task_system_agent.cs
+
+   # + 后台任务
+   dotnet run v7_background_tasks_agent.cs
+
+   # + 智能体团队
+   dotnet run v8_agent_teams.cs
+
+   # + 团队协议
+   dotnet run v9_team_protocols.cs
+
+   # + 自治智能体
+   dotnet run v10_autonomous_agents.cs
+
+   # + Worktree 任务隔离
+   dotnet run v11_worktree_task_isolation.cs
    ```
 
 ## 核心模式
@@ -132,6 +184,13 @@ while (true)
 | v2 | [v2_todo_agent.cs](v2_todo_agent.cs) | +TodoWrite | 显式规划 | 约束赋能复杂性 |
 | v3 | [v3_subagent.cs](v3_subagent.cs) | +Task | 上下文隔离 | 干净上下文 = 更好结果 |
 | v4 | [v4_skills_agent.cs](v4_skills_agent.cs) | +Skill | 知识加载 | 专业无需重训 |
+| v5 | [v5_context_compact.cs](v5_context_compact.cs) | +Compact | 三层压缩管道 | 遗忘是特性 |
+| v6 | [v6_task_system_agent.cs](v6_task_system_agent.cs) | +Task CRUD | 持久化任务板 | 状态外部化 |
+| v7 | [v7_background_tasks_agent.cs](v7_background_tasks_agent.cs) | +Background | 后台执行 | 永不阻塞 |
+| v8 | [v8_agent_teams.cs](v8_agent_teams.cs) | +Teammate | 团队通信 | 隔离即特性 |
+| v9 | [v9_team_protocols.cs](v9_team_protocols.cs) | +Protocols | 握手 FSM | 一个模式两种应用 |
+| v10 | [v10_autonomous_agents.cs](v10_autonomous_agents.cs) | +WORK/IDLE | 自治生命周期 | 拉取胜于推送 |
+| v11 | [v11_worktree_task_isolation.cs](v11_worktree_task_isolation.cs) | +Worktree | 目录隔离 | 控制面/执行面分离 |
 
 ## 深入阅读 (文章)
 
@@ -142,6 +201,13 @@ while (true)
 - [v2: 用 Todo 实现自我约束](articles/v2文章.md)
 - [v3: 子代理机制 - 上下文隔离的艺术](articles/v3文章.md)
 - [v4: Skills 机制 - 知识外部化](articles/v4文章.md)
+- [v5: 上下文压缩 - 三层管道让智能体无限工作](articles/v5文章.md)
+- [v6: 任务系统 - 文件系统上的持久化任务看板](articles/v6文章.md)
+- [v7: 后台任务 - 永不阻塞的智能体](articles/v7文章.md)
+- [v8: 智能体团队 - 从独狼到团队](articles/v8文章.md)
+- [v9: 团队协议 - 一个 FSM，两种应用](articles/v9文章.md)
+- [v10: 自治智能体 - WORK/IDLE 生命周期](articles/v10文章.md)
+- [v11: Worktree 任务隔离 - 控制面 + 执行面分离](articles/v11文章.md)
 - [上下文缓存经济学](articles/上下文缓存经济学.md)
 
 ## 设计哲学
